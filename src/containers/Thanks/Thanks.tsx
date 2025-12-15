@@ -12,11 +12,7 @@ const Thanks: React.FC<IThanks> = () => {
           I'm looking forward to out best memories ^^
         </div>
       </div>
-      <div className="credit">
-        <div className="credit-label">
-            @2025 - lamthanhngoc&trieunhatminh
-        </div>
-      </div>
+      
     </div>
   );
 };
