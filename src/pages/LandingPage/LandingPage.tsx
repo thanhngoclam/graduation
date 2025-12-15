@@ -16,6 +16,9 @@ const LandingPage: React.FC<ILandingPage> = () => {
       <Information />
       <ParkingTip />
       <Thanks />
+      <div className="credit">
+        <div className="credit-label">@2025 - lamthanhngoc&trieunhatminh</div>
+      </div>
     </div>
   );
 };
