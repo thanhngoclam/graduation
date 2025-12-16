@@ -10,4 +10,7 @@ export default defineConfig({
   plugins: [react()],
   // Keep dev root at / but serve under /<repo>/ on GitHub Pages
   base,
+  server: {
+    host: true,
+  },
 })
