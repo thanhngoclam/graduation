@@ -5,12 +5,17 @@ import Contact from "../../containers/Contact/Contact";
 import Information from "../../containers/Information/Information";
 import ParkingTip from "../../containers/ParkingTip/ParkingTip";
 import Thanks from "../../containers/Thanks/Thanks";
+import { Grid } from "antd";
+const { useBreakpoint } = Grid;
 
 interface ILandingPage {}
 
 const LandingPage: React.FC<ILandingPage> = () => {
+  const useBreakPoint = useBreakpoint();
+  const isMobile = useBreakPoint.xs;
+  
   return (
-    <div className="LandingPage">
+    <div className={`LandingPage ${isMobile && "mobile"}`}>
       <Hero />
       <Contact />
       <Information />

@@ -22,7 +22,6 @@
       .place-name {
         font-size: 1.5rem;
         font-weight: bold;
-        margin-bottom: 8px;
       }
       .address-line {
         font-size: 1.125rem;
@@ -31,6 +30,36 @@
         &:hover {
           cursor: pointer;
         }
+      }
+    }
+  }
+
+  .place-name-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+
+  &.mobile {
+    .ant-row {
+      row-gap: 0 !important;
+      width: 102%;
+    }
+    .title {
+      font-size: 2rem;
+    }
+    .content {
+      margin-top: -100px;
+      padding: 0 32px;
+    }
+    .parking-info {
+      text-align: left;
+      .place-name {
+        font-size: 1.4rem;
       }
     }
   }

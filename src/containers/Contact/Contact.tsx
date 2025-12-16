@@ -1,7 +1,9 @@
 import React from "react";
 import "./Contact.scss";
 import FBIcon from "../../assets/fb.svg";
-import { Image } from "antd";
+import { Grid, Image } from "antd";
+const { useBreakpoint } = Grid;
+import sweet from "../../assets/background_contact.jpg";
 
 interface IContact {}
 
@@ -10,8 +12,19 @@ const Contact: React.FC<IContact> = () => {
     window.open("https://www.facebook.com/lamthanhngoc713", "_blank");
   };
 
+  const useBreakPoint = useBreakpoint();
+  const isMobile = useBreakPoint.xs;
+
   return (
-    <div className="Contact">
+    <div className={`Contact ${isMobile && "mobile"}`}>
+      <div className="image">
+        <Image
+          src={sweet}
+          preview={false}
+          className="sweet"
+          width={isMobile ? 350 : 600}
+        />
+      </div>
       <div className="contact-content">
         Halluuu, I'm Thanh Ngoc Lam 🙋‍♀️ <br />
         <br />I am about to complete my 4-year miracle journey and that would be

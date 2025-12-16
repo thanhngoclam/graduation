@@ -27,4 +27,34 @@
       font-size: 1.25rem;
     }
   }
+  &.mobile {
+    background-image: none;
+    .ant-row {
+      row-gap: 0 !important;
+    }
+    .info-box {
+      width: 100%;
+      background-image: url("../../assets/background.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .location-info {
+        .place-name {
+          font-size: 0.75rem;
+        }
+        .address-line {
+          font-size: 0.75rem;
+        }
+      }
+      .datetime-info {
+        font-size: 0.75rem;
+      }
+    }
+  }
 }

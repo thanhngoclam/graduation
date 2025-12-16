@@ -34,4 +34,20 @@
     flex-direction: column;
     align-items: center;
   }
+
+  &.mobile {
+    .invitation-label {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      margin-top: 20px;
+    }
+    .name-label {
+      font-size: 1.25rem;
+      margin-bottom: -70px;
+    }
+    .graduation-label {
+      font-size: 4.5rem;
+
+    }
+  }
 }

@@ -1,10 +1,14 @@
 import React from "react";
 import "./ParkingTip.scss";
-import { Row, Col } from "antd";
+import { Row, Col, Grid } from "antd";
+const { useBreakpoint } = Grid;
 
 interface IParkingTip {}
 
 const ParkingTip: React.FC<IParkingTip> = () => {
+  const useBreakPoint = useBreakpoint();
+  const isMobile = useBreakPoint.xs;
+
   const handleAddressClick = (place: string) => {
     switch (place) {
       case "NZ":
@@ -21,15 +25,18 @@ const ParkingTip: React.FC<IParkingTip> = () => {
     }
   };
   return (
-    <div className="ParkingTip">
+    <div className={`ParkingTip ${isMobile ? "mobile" : ""}`}>
       <Row gutter={[16, 16]}>
-        <Col span={12}>
+        <Col span={isMobile ? 24 : 12} style={{ paddingInline: 0 }}>
           <div className="info-box title font-secondary">Parking Tip</div>
         </Col>
-        <Col span={12}>
-          <div className="info-box">
+        <Col span={isMobile ? 24 : 12} style={{ paddingInline: 0 }}>
+          <div className="info-box content">
             <div className="parking-info">
-              <div className="place-name">📍 NOWZONE Fashion Mall</div>
+              <div className="place-name-group">
+                <div className="icon">📍</div>
+                <div className="place-name"> NOWZONE Fashion Mall</div>
+              </div>
               <div
                 className="address-line"
                 onClick={() => handleAddressClick("NZ")}
@@ -39,8 +46,11 @@ const ParkingTip: React.FC<IParkingTip> = () => {
               <br />
             </div>
             <div className="parking-info">
-              <div className="place-name">
-                📍 Le Hong Phong High School for The Gifted
+              <div className="place-name-group">
+                <div className="icon">📍</div>
+                <div className="place-name">
+                  Le Hong Phong High School for The Gifted
+                </div>
               </div>
               <div
                 className="address-line"
@@ -51,8 +61,11 @@ const ParkingTip: React.FC<IParkingTip> = () => {
               <br />
             </div>
             <div className="parking-info">
-              <div className="place-name">
-                📍 Ho Chi Minh City University of Education
+              <div className="place-name-group">
+                <div className="icon">📍</div>
+                <div className="place-name">
+                  Ho Chi Minh City University of Education
+                </div>
               </div>
               <div
                 className="address-line"
